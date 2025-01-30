@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Backtest Results</title>
+</head>
+<body>
+    <h1>Backtest Results</h1>
+    <table border="1">
+        <tr>
+            <th>Token</th>
+            <th>Date In</th>
+            <th>Buy Price</th>
+            <th>Date Out</th>
+            <th>Sell Price</th>
+            <th>Profit (%)</th>
+        </tr>
+        {% for trade in trades %}
+        <tr>
+            <td>{{ trade.token }}</td>
+            <td>{{ trade.date_in }}</td>
+            <td>{{ trade.buy_price }}</td>
+            <td>{{ trade.date_out }}</td>
+            <td>{{ trade.sell_price }}</td>
+            <td>{{ trade.profit_percentage }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="/download">Download CSV</a>
+</body>
+</html>
